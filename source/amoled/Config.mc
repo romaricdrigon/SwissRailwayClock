@@ -144,7 +144,7 @@ class Config {
         [:Off, :DateDisplayDayOnly, :DateDisplayWeekdayAndDay], // I_DATE_DISPLAY
         [:DarkModeScheduled, :Off, :DarkModeInDnD], // I_DARK_MODE
         [:HideIndicatorsInDm, :HideIndicatorsAlways, :HideIndicatorsNever], // I_HIDE_INDICATORS
-        [:AccentRed, :AccentOrange, :AccentYellow, :AccentLtGreen, :AccentGreen, :AccentLtBlue, :AccentBlue, :AccentPurple, :AccentPink], // I_ACCENT_COLOR
+        [:AccentRed, :AccentOrange, :AccentYellow, :AccentLtGreen, :AccentGreen, :AccentLtBlue, :AccentBlue, :AccentPurple, :AccentPink, :AccentVermilion], // I_ACCENT_COLOR
         [:Off, :Hourly, :EveryMinute, :EverySecond], // I_ACCENT_CYCLE
         [:DimmerLevelWhite, :DimmerLevelLight, :DimmerLevelMedium, :DimmerLevelSlate, :DimmerLevelDark], // I_BRIGHTNESS
         [:DimmerLevelWhite, :DimmerLevelLight, :DimmerLevelMedium, :DimmerLevelSlate, :DimmerLevelDark], // I_DM_CONTRAST
@@ -353,7 +353,7 @@ class Config {
     public function getAccentColor(hour as Number, minute as Number, second as Number) as Number {
         var aci = 0;
         if (hour != -1 and isEnabled(I_ACCENT_CYCLE)) {
-            aci = [0, hour, minute, second][getValue(I_ACCENT_CYCLE)] % 9;
+            aci = [0, hour, minute, second][getValue(I_ACCENT_CYCLE)] % 10;
         } else {
             aci = getValue(I_ACCENT_COLOR);
         }
@@ -372,7 +372,8 @@ class Config {
             0x55ffff, 0x44cccc, // light blue
             0x00AAFF, 0x0088cc, // blue
             0xaa00ff, 0x8800cc, // purple
-            0xff00aa, 0xcc0088  // pink
+            0xff00aa, 0xcc0088, // pink
+            0xff4400, 0xcc3600  // vermilion
         ][aci];
     }
 
