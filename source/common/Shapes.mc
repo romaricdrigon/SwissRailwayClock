@@ -71,11 +71,11 @@ import Toybox.System;
         // See docs/1508_CHD151_foto_b.jpg for the original design. The numbers used here deviate from 
         // that only slightly.
         //                          height, width1, width2, radius
-        shapes[S_BIGTICKMARK]   = [  12.0,    3.5,    3.5,   36.5];	
-        shapes[S_SMALLTICKMARK] = [   3.5,    1.4,    1.4,   45.0];
-        shapes[S_HOURHAND]      = [  44.0,    6.3,    5.1,  -12.0];
-        shapes[S_MINUTEHAND]    = [  57.8,    5.2,    3.7,  -12.0];
-        shapes[S_SECONDHAND]    = [  47.9,    1.4,    1.4,  -16.5];
+        shapes[S_BIGTICKMARK]   = [   8.0,    2.0,    2.0,   42.0];	
+        shapes[S_SMALLTICKMARK] = [   3.0,    0.9,    0.9,   47.0];
+        shapes[S_HOURHAND]      = [  39.0,    4.2,    2.8,   -7.0];
+        shapes[S_MINUTEHAND]    = [  54.0,    3.4,    2.0,   -7.0];
+        shapes[S_SECONDHAND]    = [  48.0,    1.1,    1.1,  -10.0];
         shapes[S_GAUGEHAND]     = [   8.5,    2.5,    0.75,  -3.5];
 
         // Convert the clock geometry data to pixels
@@ -109,7 +109,7 @@ import Toybox.System;
         }
 
         // The radius of the second hand circle in pixels, calculated from the percentage of the clock face diameter
-        secondCircleRadius = ((5.1 * clockRadius / 50.0) + 0.5).toNumber();
+        secondCircleRadius = ((4.0 * clockRadius / 50.0) + 0.5).toNumber();
         var secondCircleY = _coords[S_SECONDHAND * 8 + 3];
         // Shorten the second hand from the circle center to the edge of the circle to avoid a dark shadow
         _coords[S_SECONDHAND * 8 + 3] += secondCircleRadius - 1;
